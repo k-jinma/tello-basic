@@ -1,0 +1,28 @@
+# 仮想環境
+.venv/
+venv/
+env/
+
+# Pythonキャッシュ
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# IDE設定
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS生成ファイル
+.DS_Store
+Thumbs.db
+
+# ログファイル
+*.log
+
+# ビルド・配布
+build/
+dist/
+*.egg-info/
