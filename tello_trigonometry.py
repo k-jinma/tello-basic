@@ -195,6 +195,24 @@ def lesson_3_square(tello):
     print("\n正方形完成！")
     tello.land()
     print("レッスン3終了")
+    
+def lesson_0_simple_move(tello):
+    """
+    レッスン0: 角度を入力して30cm移動し、着陸する
+    """
+    angle = float(input("角度を入力 (0-360): "))
+    
+    # 角度からx, y成分を計算
+    rad = math.radians(angle)
+    x = int(30 * math.cos(rad))  # 横方向
+    y = int(30 * math.sin(rad))  # 縦方向
+    
+    # 飛行
+    tello.takeoff()
+    time.sleep(2)
+    tello.go_xyz_speed(y, x, 0, 20)
+    time.sleep(1)
+    tello.land()
 
 
 def main():
@@ -226,8 +244,10 @@ def main():
             elif choice == "0":
                 print("プログラムを終了します")
                 break
+            elif choice == "0":
+                lesson_0_simple_move(tello)
             else:
-                print("1-3 または 0 を入力してください")
+                print("1-4 または 0 を入力してください")
     
     except KeyboardInterrupt:
         print("\n中断されました")
