@@ -29,31 +29,23 @@ tello.takeoff()
 time.sleep(2)
 
 
-# lesson3-2.pyのコードを参考に、
-# 正三角形の3つの頂点の方向を計算して移動するコードを書いてみましょう
-
 rad = math.radians(0)
 x = int(MOVE_DISTANCE * math.cos(rad))  # 左右方向
 y = int(MOVE_DISTANCE * math.sin(rad))  # 前後方向
 tello.go_xyz_speed(y, x, 0, FLIGHT_SPEED)
 time.sleep(1)
 
-
-# 120度の方向に移動
-
-
-
+rad = math.radians(120)
+x = int(MOVE_DISTANCE * math.cos(rad))  # 左右方向
+y = int(MOVE_DISTANCE * math.sin(rad))  # 前後方向
 tello.go_xyz_speed(y, x, 0, FLIGHT_SPEED)
 time.sleep(1)
 
-
-# 次の方向に移動
-
-
-
+rad = math.radians(240)
+x = int(MOVE_DISTANCE * math.cos(rad))  # 左右方向
+y = int(MOVE_DISTANCE * math.sin(rad))  # 前後方向
 tello.go_xyz_speed(y, x, 0, FLIGHT_SPEED)
 time.sleep(1)
-
 
 tello.land()
 
