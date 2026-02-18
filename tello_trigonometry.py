@@ -1,8 +1,6 @@
 """
 Telloで学ぶ三角関数
 ドローンの動きで sin, cos を体験的に理解する教育プログラム
-
-対象: 中学生〜高校生
 """
 
 from djitellopy import Tello
@@ -107,48 +105,18 @@ def lesson_1_angle_direction(tello):
 
 def lesson_2_triangle(tello):
     """
-    レッスン2: 正三角形を描く
-    内角60°、外角120°を使用
+    レッスン2: 正三角形を描く（外角120°）
     """
-    print("\n" + "=" * 50)
-    print("【レッスン2】正三角形を描く")
-    print("=" * 50)
-    print("""
-    正三角形の性質:
-    - 内角: 60°
-    - 外角: 120° (180° - 60°)
-    
-    ドローンの動き:
-    1. 前進 → 2. 右に120°回転 → 3. 前進 → ...
-    
-        ╱╲
-       ╱  ╲
-      ╱ 60°╲
-     ╱──────╲
-    """)
-    
-    input("離陸して正三角形を描きます。Enterキーを押してください...")
     tello.takeoff()
     time.sleep(2)
     
-    side_length = MOVE_DISTANCE
-    turn_angle = 120  # 外角
-    
-    print(f"\n1辺の長さ: {side_length}cm")
-    print(f"回転角度（外角）: {turn_angle}°")
-    
     for i in range(3):
-        print(f"\n辺 {i+1}/3: 前進 {side_length}cm")
-        tello.move_forward(side_length)
+        tello.move_forward(MOVE_DISTANCE)
         time.sleep(0.5)
-        
-        print(f"回転: 右に {turn_angle}°")
-        tello.rotate_clockwise(turn_angle)
+        tello.rotate_clockwise(120)
         time.sleep(0.5)
     
-    print("\n正三角形完成！")
     tello.land()
-    print("レッスン2終了")
 
 
 def lesson_3_square(tello):
@@ -212,6 +180,26 @@ def lesson_0_simple_move(tello):
     time.sleep(2)
     tello.go_xyz_speed(y, x, 0, 20)
     time.sleep(1)
+    tello.land()
+
+
+def lesson_0_simple_move2(tello):
+    """
+    レッスン0: 角度を入力して30cm移動し、着陸する（move_forward + rotate_clockwise版）
+    """
+    angle = float(input("角度を入力 (0-360): "))
+    
+    tello.takeoff()
+    time.sleep(2)
+    
+    # 入力角度分だけ回転
+    tello.rotate_clockwise(angle)
+    time.sleep(0.5)
+    
+    # 前進
+    tello.move_forward(30)
+    time.sleep(1)
+    
     tello.land()
 
 
