@@ -19,7 +19,7 @@ except:
     print("接続成功！")
 
 # 角度を入力
-angle = float(input("角度を入力 (0-360): "))
+angle = int(float(input("角度を入力 (0-360): ")))
 
 print(f"\n角度: {angle}°")
 print("ドローンが回転して前進します")

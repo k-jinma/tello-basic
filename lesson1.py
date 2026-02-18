@@ -25,8 +25,8 @@ angle = float(input("角度を入力 (0-360): "))
 
 # 角度からx, y成分を計算
 rad = math.radians(angle)
-x = int(MOVE_DISTANCE * math.cos(rad))  # 横方向
-y = int(MOVE_DISTANCE * math.sin(rad))  # 縦方向
+x = int(MOVE_DISTANCE * math.cos(rad))  # 横はどれくらい移動するか
+y = int(MOVE_DISTANCE * math.sin(rad))  # 縦はどれくらい移動するか
 
 print(f"\n角度: {angle}°")
 print(f"移動: x={x}cm, y={y}cm")
