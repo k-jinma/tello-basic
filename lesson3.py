@@ -25,37 +25,21 @@ except:
 print("正方形を描きます")
 
 # 飛行
-tello.takeoff()
-time.sleep(2)
+tello.takeoff() # 離陸
+time.sleep(2) # 少し待つ
 
-# for _ in range(4):
-#     tello.move_forward(MOVE_DISTANCE)
-#     time.sleep(0.5)
-#     tello.rotate_clockwise(TURN_ANGLE)
-#     time.sleep(0.5)
+tello.move_forward(WIDTH) # 前進
+time.sleep(0.5) # 少し待つ
+tello.rotate_clockwise(TURN_ANGLE) # 右回転
+time.sleep(0.5) # 少し待つ
 
-# forを使わずに長方形を描く
-tello.move_forward(WIDTH)
-time.sleep(0.5)
-tello.rotate_clockwise(TURN_ANGLE)
-time.sleep(0.5)
 
-tello.move_forward(HEIGHT)
-time.sleep(0.5)
-tello.rotate_clockwise(TURN_ANGLE)
-time.sleep(0.5)
+# プログラムを完成させよう
 
-tello.move_forward(WIDTH)
-time.sleep(0.5)
-tello.rotate_clockwise(TURN_ANGLE)
-time.sleep(0.5)
 
-tello.move_forward(HEIGHT)
-time.sleep(0.5)
-tello.rotate_clockwise(TURN_ANGLE)
-time.sleep(0.5)
 
-tello.land()
 
-tello.end()
+tello.land() # 着陸
+
+tello.end() # 接続終了
 print("終了しました")
