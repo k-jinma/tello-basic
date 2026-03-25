@@ -46,12 +46,12 @@ def main():
 
         # 2回目は反対側の半円を飛んで、開始位置付近に戻ります。
         # ここも z1=0, z2=0 なので、高さは変わりません。
-        tello.curve_xyz_speed(
-            -60, -60, 0,  # x1, y1, z1（途中点）
-            0, -2 * 60, 0,       # x2, y2, z2（終点）
-            20                  # speed（速さ）
-        )
-        time.sleep(1)
+        # tello.curve_xyz_speed(
+        #     -60, -60, 0,  # x1, y1, z1（途中点）
+        #     0, -2 * 60, 0,       # x2, y2, z2（終点）
+        #     20                  # speed（速さ）
+        # )
+        # time.sleep(1)
 
     except Exception as exc:
         print(f"飛行中にエラーが発生しました: {exc}")
