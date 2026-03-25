@@ -14,9 +14,11 @@ try:
 
     time.sleep(1)
 
-    tello.move_forward(30)
-
-    time.sleep(1)
+    for i in range(4):
+        tello.move_forward(30)
+        if i < 3:
+            tello.rotate_clockwise(90)
+    
 
     tello.land()
 
